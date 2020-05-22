@@ -10,6 +10,8 @@ public class Orarendterv {
         return a;
     }
 
+    public String kiirora(String a){return a;}
+
     public String kiirevfolyam(String a) {
         return a;
     }
