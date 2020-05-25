@@ -1,5 +1,8 @@
 package model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Orarendterv {
 
     public String kiirtargy(String a) {

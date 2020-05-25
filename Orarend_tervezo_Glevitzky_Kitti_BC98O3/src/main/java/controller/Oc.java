@@ -1,14 +1,13 @@
 package controller;
 
+import Adatkezeles.Dao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Orarendterv;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/*Controller*/
 public class Oc {
     @FXML
     private TextField targy;
@@ -30,6 +29,8 @@ public class Oc {
     @FXML
     private Label eredmeny;
 
+    private Dao dao;
+
     private Orarendterv orarend;
 
     @FXML
@@ -43,40 +44,54 @@ public class Oc {
     public String evfolyammentes;
     public String osztalymentes;
     public String vegeredmeny;
-    public int szamlalo;
+
+    public String miatargy="matematika";
+    public String mianap="hétfő";
+    public String miaora="4";
+    public String miaevfolyam="negyedik";
+    public String miaosztaly="A";
+
 
 
     public void targyhozzaad(javafx.event.ActionEvent actionEvent) {
+        //targy.setText(orarend.kiirtargy(miatargy));
         targymentes=orarend.kiirtargy(targy.getText());
+
 
     }
 
     public void naphozzaad(javafx.event.ActionEvent actionEvent) {
+        //nap.setText(orarend.kiirnap(mianap));
         napmentes=orarend.kiirnap(nap.getText());
+
 
     }
 
     public void orahozzaad(ActionEvent actionEvent) {
+        //ora.setText(orarend.kiirora(miaora));
         oramentes=orarend.kiirora(ora.getText());
+
     }
 
     public void evfolyamhozzaad(javafx.event.ActionEvent actionEvent) {
+       // evfolyam.setText(orarend.kiirevfolyam(miaevfolyam));
         evfolyammentes=orarend.kiirevfolyam(evfolyam.getText());
+
 
     }
 
     public void osztayhozzaad(javafx.event.ActionEvent actionEvent) {
+        //osztaly.setText(orarend.kiirosztaly(miaosztaly));
         osztalymentes=orarend.kiirosztaly(osztaly.getText());
+
 
     }
 
     public void vegkiiratas(ActionEvent actionEvent) {
         eredmeny.setText(orarend.kiirveg(targymentes+" "+napmentes+" "+oramentes+" "+evfolyammentes+" "+osztalymentes));
         vegeredmeny=eredmeny.getText();
-        szamlalo++;
 
     }
-
 
 
 }

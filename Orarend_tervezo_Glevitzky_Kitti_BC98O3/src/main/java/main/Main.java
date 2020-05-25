@@ -1,5 +1,5 @@
 package main;
-
+/*Az apllikációm futtatása*/
 import javafx.application.Application;
 
 public class Main {

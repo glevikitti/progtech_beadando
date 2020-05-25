@@ -18,5 +18,8 @@ public class Main_Adat {
         em.persist(oratervezet);
         em.getTransaction().commit();
         System.out.println(oratervezet);
+
+        em.close();
+        emf.close();
     }
 }
